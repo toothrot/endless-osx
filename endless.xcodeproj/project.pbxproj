@@ -12,6 +12,10 @@
 		FA58F46A1B77B0E1001FF16B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA58F4691B77B0E1001FF16B /* Images.xcassets */; };
 		FA58F46D1B77B0E1001FF16B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA58F46B1B77B0E1001FF16B /* Main.storyboard */; };
 		FA58F4791B77B0E2001FF16B /* endlessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA58F4781B77B0E2001FF16B /* endlessTests.swift */; };
+		FA58F4831B77B24C001FF16B /* DropboxOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA58F4821B77B24C001FF16B /* DropboxOSX.framework */; };
+		FA58F4851B77B29B001FF16B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA58F4841B77B29B001FF16B /* Security.framework */; };
+		FA58F4861B77B2C0001FF16B /* DropboxOSX.framework in Resources */ = {isa = PBXBuildFile; fileRef = FA58F4821B77B24C001FF16B /* DropboxOSX.framework */; };
+		FA58F4881B77B323001FF16B /* DropboxOSX.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FA58F4821B77B24C001FF16B /* DropboxOSX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,6 +28,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FA58F4871B77B314001FF16B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FA58F4881B77B323001FF16B /* DropboxOSX.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		FA58F4601B77B0E1001FF16B /* endless.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = endless.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA58F4641B77B0E1001FF16B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -34,6 +51,8 @@
 		FA58F4721B77B0E2001FF16B /* endlessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = endlessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA58F4771B77B0E2001FF16B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA58F4781B77B0E2001FF16B /* endlessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = endlessTests.swift; sourceTree = "<group>"; };
+		FA58F4821B77B24C001FF16B /* DropboxOSX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxOSX.framework; sourceTree = "<group>"; };
+		FA58F4841B77B29B001FF16B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA58F4851B77B29B001FF16B /* Security.framework in Frameworks */,
+				FA58F4831B77B24C001FF16B /* DropboxOSX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +78,8 @@
 		FA58F4571B77B0E1001FF16B = {
 			isa = PBXGroup;
 			children = (
+				FA58F4841B77B29B001FF16B /* Security.framework */,
+				FA58F4821B77B24C001FF16B /* DropboxOSX.framework */,
 				FA58F4621B77B0E1001FF16B /* endless */,
 				FA58F4751B77B0E2001FF16B /* endlessTests */,
 				FA58F4611B77B0E1001FF16B /* Products */,
@@ -119,6 +142,7 @@
 				FA58F45C1B77B0E1001FF16B /* Sources */,
 				FA58F45D1B77B0E1001FF16B /* Frameworks */,
 				FA58F45E1B77B0E1001FF16B /* Resources */,
+				FA58F4871B77B314001FF16B /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -189,6 +213,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA58F4861B77B2C0001FF16B /* DropboxOSX.framework in Resources */,
 				FA58F46A1B77B0E1001FF16B /* Images.xcassets in Resources */,
 				FA58F46D1B77B0E1001FF16B /* Main.storyboard in Resources */,
 			);
@@ -328,6 +353,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = endless/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -339,6 +368,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = endless/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
